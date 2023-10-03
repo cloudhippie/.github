@@ -1,9 +1,9 @@
 ---
 repository:
   name: .github
-  description: General org settings and overview
+  description: Organization settings and overview
   homepage: https://cloudhippie.de
-  topics: cloudhippie, github, scripting, profile
+  topics: cloudhippie, github, profile
 
   private: false
   has_issues: true

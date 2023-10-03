@@ -1,7 +1,5 @@
 # Cloudhippie: GitHub
 
-[![General Workflow](https://github.com/cloudhippie/.github/actions/workflows/general.yml/badge.svg)](https://github.com/cloudhippie/.github/actions/workflows/general.yml)
-
 TBD
 
 ## Development
