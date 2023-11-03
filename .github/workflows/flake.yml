@@ -46,13 +46,6 @@ jobs:
           git-author-email: github@cloudhippie.de
           token: ${{ steps.token.outputs.token }}
 
-      - name: Approve request
-        id: approve
-        if: steps.flake.outputs.pull-request-operation == 'created'
-        run: gh pr review --approve "${{ steps.flake.outputs.pull-request-number }}"
-        env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
       - name: Enable automerge
         id: automerge
         if: steps.flake.outputs.pull-request-operation == 'created'
