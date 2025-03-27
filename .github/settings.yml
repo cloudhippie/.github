@@ -1,7 +1,7 @@
 ---
 repository:
   name: .github
-  description: Organization settings and overview
+  description: GitHub org settings for Cloudhippie
   homepage: https://cloudhippie.de
   topics: cloudhippie, github, profile
 
