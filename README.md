@@ -1,10 +1,8 @@
 # Cloudhippie: GitHub
 
-TBD
-
-## Development
-
-TBD
+Generally this repository is used for a centrally defines Renovate configuration
+and it also provides the Github profile page. Currently there are no plans to
+extend the given context.
 
 ## Security
 
