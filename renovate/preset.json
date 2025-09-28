@@ -4,9 +4,31 @@
     "Preset used by Cloudhippie"
   ],
   "extends": [
-    "config:base",
+    "config:best-practices",
+    ":disableRateLimiting",
+    ":prImmediately",
     ":semanticCommits",
     ":semanticCommitType(deps)"
+  ],
+  "dockerfile": {
+    "pinDigests": true
+  },
+  "gomod": {
+    "postUpdateOptions": [
+      "gomodUpdateImportPaths",
+      "gomodTidy"
+    ]
+  },
+  "regexManagers": [
+    {
+      "fileMatch": [
+        "(^|/|\\.)([Dd]ocker|[Cc]ontainer)file$",
+        "(^|/)([Dd]ocker|[Cc]ontainer)file[^/]*$"
+      ],
+      "matchStrings": [
+        "# renovate: datasource=(?<datasource>\\S+) depName=(?<depName>\\S+)( versioning=(?<versioning>.*?))?\nENV .*?_VERSION=(?<currentValue>.*)"
+      ]
+    }
   ],
   "packageRules": [
     {
@@ -14,8 +36,8 @@
       "matchUpdateTypes": [
         "major"
       ],
-      "semanticCommitType": "major",
-      "semanticCommitScope": "deps",
+      "semanticCommitType": "deps",
+      "semanticCommitScope": "major",
       "automerge": true
     },
     {
@@ -23,8 +45,8 @@
       "matchUpdateTypes": [
         "minor"
       ],
-      "semanticCommitType": "minor",
-      "semanticCommitScope": "deps",
+      "semanticCommitType": "deps",
+      "semanticCommitScope": "minor",
       "automerge": true
     },
     {
@@ -32,28 +54,63 @@
       "matchUpdateTypes": [
         "patch"
       ],
-      "semanticCommitType": "patch",
-      "semanticCommitScope": "deps",
+      "semanticCommitType": "deps",
+      "semanticCommitScope": "patch",
       "automerge": true
     },
     {
-      "description": "Automerge untagged golang libs",
-      "matchPackageNames": [
-        "golang.org/x/crypto",
-        "golang.org/x/net"
+      "description": "Automerge docker digest updates",
+      "groupName": "docker digests",
+      "matchDatasources": [
+        "docker"
+      ],
+      "matchUpdateTypes": [
+        "pin",
+        "pinDigest",
+        "digest"
       ],
       "semanticCommitType": "patch",
       "semanticCommitScope": "deps",
+      "pinDigests": true,
       "automerge": true
     },
     {
       "description": "Build tool version upgrades",
+      "groupName": "build tools",
       "matchManagers": [
         "github-actions"
       ],
       "semanticCommitType": "ci",
       "semanticCommitScope": "tools",
       "automerge": true
+    },
+    {
+      "description": "Automerge untagged golang libs",
+      "groupName": "untagged libraries",
+      "matchPackageNames": [
+        "golang.org/x/crypto",
+        "golang.org/x/net"
+      ],
+      "semanticCommitType": "deps",
+      "semanticCommitScope": "patch",
+      "automerge": true
+    },
+    {
+      "matchManagers": [
+        "gomod"
+      ],
+      "ignoreDeps": [
+        "github.com/golangci/golangci-lint/v2/cmd/golangci-lint",
+        "github.com/mgechev/revive",
+        "github.com/golang/mock/mockgen",
+        "github.com/oapi-codegen/oapi-codegen/v2/cmd/oapi-codegen"
+      ]
+    },
+    {
+      "matchPackageNames": [
+        "/^github.com\/uptrace\/bun"
+      ],
+      "groupName": "github.com-uptrace-bun deps"
     }
   ],
   "labels": [
