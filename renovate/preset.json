@@ -69,8 +69,8 @@
         "pinDigest",
         "digest"
       ],
-      "semanticCommitType": "patch",
-      "semanticCommitScope": "deps",
+      "semanticCommitType": "deps",
+      "semanticCommitScope": "patch",
       "pinDigests": true,
       "automerge": true
     },
