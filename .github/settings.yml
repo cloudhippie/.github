@@ -48,9 +48,7 @@ rulesets:
       - type: required_status_checks
         parameters:
           strict_required_status_checks_policy: true
-          required_status_checks:
-            - context: Semantic PR
-              integration_id: 198092
+          required_status_checks: []
     bypass_actors:
       - actor_id: 1
         actor_type: OrganizationAdmin
