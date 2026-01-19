@@ -82,7 +82,8 @@
       ],
       "semanticCommitType": "ci",
       "semanticCommitScope": "tools",
-      "automerge": true
+      "automerge": true,
+      "pinDigests": false
     },
     {
       "description": "Automerge untagged golang libs",
