@@ -123,6 +123,7 @@
       "groupName": "github.com-uptrace-bun deps"
     }
   ],
+  "automergeType": "pr",
   "labels": [
     "renovate"
   ]
