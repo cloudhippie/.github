@@ -36,10 +36,10 @@ After installing the tools via `mise install` as described above set up the
 pre-commit hooks so they run automatically on every commit:
 
 ```console
-pre-commit install --hook-type pre-commit --hook-type commit-msg
+prek install --hook-type pre-commit --hook-type commit-msg
 ```
 
-> `pre-commit` is managed by mise and will be available after `mise install`.
+> `prek` is managed by mise and will be available after `mise install`.
 
 If you have changed something on the source you should simply commit following
 the mentioned conventions:
@@ -54,7 +54,6 @@ git push --set-upstream origin feat/new-feature
 After pushing your changes into the Git repository you should create a pull
 request on GitHub. If the pull request have been merged and everything built
 fine it will also create automatically a new release at least once a week.
-
 
 ## Authors
 
