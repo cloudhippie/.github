@@ -68,6 +68,15 @@
       "automerge": true
     },
     {
+      "description": "Automerge mise tool updates",
+      "matchManagers": [
+        "mise"
+      ],
+      "semanticCommitType": "deps",
+      "semanticCommitScope": "mise",
+      "automerge": true
+    },
+    {
       "description": "Automerge docker digest updates",
       "groupName": "docker digests",
       "matchDatasources": [
