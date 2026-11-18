@@ -10,6 +10,14 @@
     ":semanticCommits",
     ":semanticCommitType(deps)"
   ],
+  "hostRules": [
+    {
+      "hostType": "docker",
+      "matchHost": "ghcr.io",
+      "username": "cloudhippie",
+      "password": "{{ secrets.GHCR_TOKEN }}"
+    }
+  ],
   "dockerfile": {
     "pinDigests": true
   },
