@@ -2,7 +2,7 @@
 repository:
   name: .github
   description: GitHub org settings for Cloudhippie
-  homepage: https://cloudhippie.de
+  homepage: https://www.cloudhippie.de
   topics: cloudhippie, github, profile
 
   private: false
